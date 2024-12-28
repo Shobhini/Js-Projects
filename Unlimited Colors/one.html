@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+    <title>Home</title>
+</head>
+<body style="background-color: beige; color: rgb(230, 0, 255);">
+    <nav>
+        <a href="/" aria-current="page"> Home </a>
+    </nav>
+    
+    <h1>Start should change the bg color every sec</h1>
+    
+    
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    const sayDate= function(str){
+        console.log(str, Date.now());
+    }
+    const intervalId = setInterval(sayDate, 1000, "hi")
+    clearInterval(intervalId) 
+</script>
+</html>
