@@ -42,6 +42,16 @@ function whoLoses(userChoice, cpuChoice){
     modal.style.display= 'flex';
 }
 
+
+function draw(userChoice, cpuChoice) {
+    userScoreSpan.innerHTML= userScore;
+    cpuScoreSpan.innerHTML= cpuScore;
+    result.innerHTML= `<span class="close"> </span>
+    <h1 > It's a draw!</h1>
+    <p> You both choose <strong> ${cpuChoice} </strong></p>`;
+
+    modal.style.display= 'flex';
+}
 function play(userChoice){
     const cpuChoice= getCpuChoice();
     switch(userChoice + cpuChoice){

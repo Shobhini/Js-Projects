@@ -70,12 +70,12 @@ header{
   border-radius: 12px;
 }
 
-#user-badge{
+#userBadge{
   position: absolute;
   left: -40px;
 }
 
-#cpu-badge{
+#cpuBadge{
   position: absolute;
   right: -55px;
 }
