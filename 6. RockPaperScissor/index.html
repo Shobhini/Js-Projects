@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang= "en">   
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content ="width= device-width, initial-scale= 1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="modal.css">
+        <title> Rock-Paper-Scissor</title>
+    </head>
+    <body>
+        <header>
+            <h1 class="title">Rock - Paper - Scissor</h1>
+        </header>
+
+        <div class="btn-container">
+            <button id="restart" class="restart-btn">Restart Game</button>
+        </div>
+
+        <div class="score-board">
+            <div id="user-badge" class="badge">User</div>
+            <div id="cpu-badge" class="badge">Computer</div>
+            <span id="user-score"> 0 </span> : <span id="cpu-score"> 0</span>
+        </div>
+
+        <div class="choices">
+            <div id="rock" class="choice">
+                <img src="rock.png" alt="">
+            </div>
+            <div id="paper" class="choice">
+                <img src="paper.png" alt="">
+            </div>
+            <div id="scissor" class="choice">
+                <img src="scissors.png" alt="">
+            </div>
+        </div>
+
+        <h2>Make your choice</h2>
+
+        <div class="modal">
+            <div id="result" class="modal-content"></div>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>
