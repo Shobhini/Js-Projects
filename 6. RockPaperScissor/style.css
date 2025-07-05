@@ -53,26 +53,29 @@ header{
 }
 
 .score-board{
-  margin: 8% 0 4%;
+  margin: 8% 8% 4%;
   text-align: center;
   color: white;
   border: 3px solid white;
   width: 250px;
   font-size: 6rem;
   padding: 30px 10px;
-  position: relative
+  position: relative;
+  box-shadow: 0 12px 16px 0 rgba(219, 193, 60, 0.24), 0 17px 50px 0 rgba(227, 208, 31, 0.19);
+  border-radius: 20px;
 }
 
 .badge{
-  background:#c112a0;
+  background:#59ace3;
   font-size: 3rem;
   padding: 10px 10px;
-  border-radius: 12px;
+  border-radius: 25px;
+    
 }
 
 #userBadge{
   position: absolute;
-  left: -40px;
+  left: -55px;
 }
 
 #cpuBadge{
@@ -89,10 +92,10 @@ header{
 
 .choices .choice{
   cursor: pointer;
-  border: 3px solid  #531345;
+  border: 3px solid  #ecbb19;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 40%;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(219, 193, 60, 0.24), 0 17px 50px 0 rgba(227, 208, 31, 0.19);
   transition: all 0.1s ease;
 }
 
@@ -102,7 +105,7 @@ header{
 
 .choices .choice:hover{
   cursor: pointer;
-  background: #531345;
+  background: #8d387a;
 }
 
 .choices .choice img{
@@ -165,7 +168,7 @@ h2{
   .text-win{
     font-size: 3rem;
   }
-  .text-lose{
+  .text-loses{
     font-size: 3rem;
   }
   .modal-content p{

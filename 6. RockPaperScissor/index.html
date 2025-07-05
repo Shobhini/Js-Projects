@@ -18,7 +18,7 @@
 
         <div class="score-board">
             <div id="userBadge" class="badge">User</div>
-            <div id="cpuBadge" class="badge">Computer</div>
+            <div id="cpuBadge" class="badge">Bot</div>
             <span id="userScore"> 0 </span> : <span id="cpuScore"> 0</span>
         </div>
 
@@ -37,9 +37,32 @@
         <h2>Make your choice</h2>
 
         <div class="modal">
-            <div id="result" class="modal-content"></div>
+            <div id="result" class="modal-content">
+                <span class="close" aria-label="Close"></span>
+            </div>
         </div>
 
         <script src="main.js"></script>
+
+        <script>
+            // Attach this once, after the modal and close button are rendered
+            document.querySelector('.close').addEventListener('click', function() {
+                modal.style.display = "none";
+            });
+
+            // Optional: Close modal on Escape key
+            window.addEventListener('keydown', function(e) {
+                if (e.key === "Escape") {
+                    modal.style.display = "none";
+                }
+            });
+
+            // Optional: Close modal when clicking outside modal content
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        </script>
     </body>
 </html>

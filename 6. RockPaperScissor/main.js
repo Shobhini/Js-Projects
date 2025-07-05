@@ -23,7 +23,7 @@ function whoWin(userChoice, cpuChoice){
     userScoreSpan.innerHTML= userScore;
     cpuScoreSpan.innerHTML= cpuScore;
 
-    result.innerHTML= `<span class="close"> </span>
+    result.innerHTML= `<span class="close">&times;</span>
     <h1 class="text-win"> You win!!!</h1>
     <p> Computer choose <strong> ${cpuChoice} </strong></p>`;
 
@@ -35,7 +35,7 @@ function whoLoses(userChoice, cpuChoice){
     userScoreSpan.innerHTML= userScore;
     cpuScoreSpan.innerHTML= cpuScore;
 
-    result.innerHTML= `<span class="close"> </span>
+    result.innerHTML= `<span class="close">&times;</span>
     <h1 class="text-loses"> You Lost!!!</h1>
     <p> Computer choose <strong> ${cpuChoice} </strong></p>`;
 
@@ -46,7 +46,7 @@ function whoLoses(userChoice, cpuChoice){
 function draw(userChoice, cpuChoice) {
     userScoreSpan.innerHTML= userScore;
     cpuScoreSpan.innerHTML= cpuScore;
-    result.innerHTML= `<span class="close"> </span>
+    result.innerHTML= `<span class="close">&times; </span>
     <h1 > It's a draw!</h1>
     <p> You both choose <strong> ${cpuChoice} </strong></p>`;
 
@@ -85,16 +85,30 @@ function main() {
     })
 }
 
-function clearModal(e) {
-    closeBtn= document.querySelector('.close');
+function closeModal() {
+    modal.style.display = "none";
+}
 
-    if(e.target == modal){
-        modal.style.display = "none"
-    }else if(closeBtn){
-        closeBtn.addEventListener('click', function() {
-            modal.style.display="none"
-        });
+function setupModalListeners() {
+    // Attach close button listener once
+    const closeBtn = document.querySelector('.close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
     }
+
+    // Close modal when clicking outside modal content
+    window.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Optional: Close modal on Escape key
+    window.addEventListener('keydown', function(e) {
+        if (e.key === "Escape") {
+            closeModal();
+        }
+    });
 }
 
 function restartGame() {
@@ -105,5 +119,5 @@ function restartGame() {
 }
 
 restart.addEventListener('click', restartGame);
-window.addEventListener('click', clearModal);
+setupModalListeners();
 main();
